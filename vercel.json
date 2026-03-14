@@ -1,0 +1,22 @@
+{
+  "builds": [
+    { "src": "api/**/*.php", "use": "vercel-php@0.7.2" },
+    { "src": "public/**",    "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/assets/(.*)",            "dest": "/public/assets/$1" },
+    { "src": "/uploads/(.*)",           "dest": "/uploads/$1" },
+    { "src": "/admin/users(.*)",        "dest": "/api/admin/users.php" },
+    { "src": "/admin/reports(.*)",      "dest": "/api/admin/reports.php" },
+    { "src": "/admin/index(.*)",        "dest": "/api/admin/index.php" },
+    { "src": "/admin(.*)",              "dest": "/api/admin/index.php" },
+    { "src": "/api/attendance-action(.*)", "dest": "/api/attendance-action.php" },
+    { "src": "/dashboard(.*)",          "dest": "/api/dashboard.php" },
+    { "src": "/register(.*)",           "dest": "/api/register.php" },
+    { "src": "/logout(.*)",             "dest": "/api/logout.php" },
+    { "src": "/profile(.*)",            "dest": "/api/profile.php" },
+    { "src": "/forgot-password(.*)",    "dest": "/api/forgot-password.php" },
+    { "src": "/install(.*)",            "dest": "/api/install.php" },
+    { "src": "/(.*)",                   "dest": "/api/index.php" }
+  ]
+}
