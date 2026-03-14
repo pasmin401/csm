@@ -25,13 +25,13 @@ class DBSessionHandler implements SessionHandlerInterface {
 
     public function open($path, $name): bool {
         try {
-            $databaseUrl = $_ENV['DATABASE_URL'] ?? getenv('DATABASE_URL');
+            $databaseUrl = $_ENV['postgresql://postgres:VGFduleSXzUqUolfpVvCTnYkQupfbkJb@postgres.railway.internal:5432/railway'] ?? getenv('postgresql://postgres:VGFduleSXzUqUolfpVvCTnYkQupfbkJb@postgres.railway.internal:5432/railway');
             if ($databaseUrl) {
                 $parsed   = parse_url($databaseUrl);
-                $host     = $parsed['host'];
+                $host     = $parsed['postgres.railway.internal'];
                 $dbname   = ltrim($parsed['path'], '/');
-                $user     = $parsed['user'];
-                $password = $parsed['pass'];
+                $user     = $parsed['postgres'];
+                $password = $parsed['VGFduleSXzUqUolfpVvCTnYkQupfbkJb'];
                 $port     = $parsed['port'] ?? '5432';
             } else {
                 $host     = $_ENV['PGHOST']     ?? getenv('PGHOST');
