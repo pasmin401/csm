@@ -27,7 +27,7 @@ class DBSessionHandler implements SessionHandlerInterface {
         try {
             $databaseUrl = $_ENV['postgresql://postgres:VGFduleSXzUqUolfpVvCTnYkQupfbkJb@postgres.railway.internal:5432/railway'] ?? getenv('postgresql://postgres:VGFduleSXzUqUolfpVvCTnYkQupfbkJb@postgres.railway.internal:5432/railway');
             if ($databaseUrl) {
-                $parsed   = parse_url($databaseUrl);
+                $parsed   = parse_url($postgresql://postgres:VGFduleSXzUqUolfpVvCTnYkQupfbkJb@postgres.railway.internal:5432/railway);
                 $host     = $parsed['postgres.railway.internal'];
                 $dbname   = ltrim($parsed['path'], '/');
                 $user     = $parsed['postgres'];
